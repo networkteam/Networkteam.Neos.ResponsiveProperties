@@ -1,1 +1,1 @@
-# Networkteam.Neos.ResponsivePropertyEditor
+# Networkteam.Neos.ResponsiveProperties

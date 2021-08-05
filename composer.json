@@ -1,0 +1,12 @@
+{
+  "name": "networkteam/neos-responsive-properties",
+  "type": "neos-package",
+  "require": {
+      "neos/neos-ui": "^5.2"
+  },
+  "extra": {
+      "neos": {
+          "package-key": "Networkteam.Neos.ResponsiveProperties"
+      }
+  }
+}

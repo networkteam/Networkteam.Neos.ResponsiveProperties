@@ -1,0 +1,7 @@
+Neos:
+  Neos:
+    Ui:
+      resources:
+        javascript:
+          'Networkteam.Neos.ResponsiveProperties:ResponsivePropertyEditor':
+            resource: resource://Networkteam.Neos.ResponsiveProperties/Public/ResponsivePropertyEditor/Plugin.js
