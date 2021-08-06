@@ -1,0 +1,28 @@
+{
+  "author": "Sebastian Flor <sebastian.flor@networkteam.com>",
+  "name": "@networkteam/neos-responsive-properties",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "yarn build:editor && yarn build:registry",
+    "build:registry": "yarn workspace @networkteam/neos-responsive-properties-registry run build",
+    "build:editor": "yarn workspace @networkteam/neos-responsive-properties-editor run build",
+    "watch": "concurrently -k \"yarn watch:registry\" \"yarn watch:editor\"",
+    "watch:registry": "yarn workspace @networkteam/neos-responsive-properties-registry run watch",
+    "watch:editor": "yarn workspace @networkteam/neos-responsive-properties-editor run watch",
+    "start": "yarn watch"
+  },
+  "workspaces": [
+    "Resources/Private/Javascript/*"
+  ],
+  "private": true,
+  "repository": "git@github.com:networkteam/Networkteam.Neos.ResponsiveProperties.git",
+  "license": "MIT",
+  "dependencies": {
+    "@neos-project/react-ui-components": "^7.1.1",
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}

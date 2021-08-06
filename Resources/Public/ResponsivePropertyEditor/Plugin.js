@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js ***!
-  \************************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js ***!
+  \****************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -97,8 +97,8 @@
 
 
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var manifest_1 = tslib_1.__importDefault(__webpack_require__(/*! ./manifest */ "./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js"));
+var tslib_1 = __webpack_require__(/*! tslib */ "../../../../node_modules/tslib/tslib.es6.js");
+var manifest_1 = tslib_1.__importDefault(__webpack_require__(/*! ./manifest */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js"));
 var createReadOnlyValue = function createReadOnlyValue(value) {
     return {
         value: value,
@@ -120,10 +120,10 @@ exports["default"] = createConsumerApi;
 
 /***/ }),
 
-/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/index.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/index.js ***!
-  \************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/index.js":
+/*!****************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/dist/index.js ***!
+  \****************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -131,12 +131,12 @@ exports["default"] = createConsumerApi;
 
 
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var createConsumerApi_1 = tslib_1.__importDefault(__webpack_require__(/*! ./createConsumerApi */ "./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js"));
+var tslib_1 = __webpack_require__(/*! tslib */ "../../../../node_modules/tslib/tslib.es6.js");
+var createConsumerApi_1 = tslib_1.__importDefault(__webpack_require__(/*! ./createConsumerApi */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js"));
 exports.createConsumerApi = createConsumerApi_1["default"];
-var readFromConsumerApi_1 = tslib_1.__importDefault(__webpack_require__(/*! ./readFromConsumerApi */ "./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js"));
+var readFromConsumerApi_1 = tslib_1.__importDefault(__webpack_require__(/*! ./readFromConsumerApi */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js"));
 exports.readFromConsumerApi = readFromConsumerApi_1["default"];
-var index_1 = __webpack_require__(/*! ./registry/index */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js");
+var index_1 = __webpack_require__(/*! ./registry/index */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js");
 exports.SynchronousRegistry = index_1.SynchronousRegistry;
 exports.SynchronousMetaRegistry = index_1.SynchronousMetaRegistry;
 exports["default"] = readFromConsumerApi_1["default"]('manifest');
@@ -144,10 +144,10 @@ exports["default"] = readFromConsumerApi_1["default"]('manifest');
 
 /***/ }),
 
-/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js ***!
-  \***************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js ***!
+  \*******************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -168,10 +168,10 @@ exports["default"] = function (manifests) {
 
 /***/ }),
 
-/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js ***!
-  \**************************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js ***!
+  \******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -179,7 +179,7 @@ exports["default"] = function (manifests) {
 
 
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var tslib_1 = __webpack_require__(/*! tslib */ "../../../../node_modules/tslib/tslib.es6.js");
 function readFromConsumerApi(key) {
     return function () {
         var _a;
@@ -198,10 +198,10 @@ exports["default"] = readFromConsumerApi;
 
 /***/ }),
 
-/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js":
-/*!********************************************************************************************!*\
-  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js ***!
-  \********************************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js ***!
+  \************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -221,10 +221,10 @@ exports["default"] = AbstractRegistry;
 
 /***/ }),
 
-/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js":
-/*!***************************************************************************************************!*\
-  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js ***!
-  \***************************************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js ***!
+  \*******************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -232,8 +232,8 @@ exports["default"] = AbstractRegistry;
 
 
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var SynchronousRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js"));
+var tslib_1 = __webpack_require__(/*! tslib */ "../../../../node_modules/tslib/tslib.es6.js");
+var SynchronousRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousRegistry */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js"));
 var SynchronousMetaRegistry = function (_super) {
     tslib_1.__extends(SynchronousMetaRegistry, _super);
     function SynchronousMetaRegistry() {
@@ -252,10 +252,10 @@ exports["default"] = SynchronousMetaRegistry;
 
 /***/ }),
 
-/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js":
-/*!***********************************************************************************************!*\
-  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js ***!
-  \***********************************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js ***!
+  \***************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -263,9 +263,9 @@ exports["default"] = SynchronousMetaRegistry;
 
 
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var AbstractRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./AbstractRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js"));
-var positional_array_sorter_1 = tslib_1.__importDefault(__webpack_require__(/*! @neos-project/positional-array-sorter */ "./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js"));
+var tslib_1 = __webpack_require__(/*! tslib */ "../../../../node_modules/tslib/tslib.es6.js");
+var AbstractRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./AbstractRegistry */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js"));
+var positional_array_sorter_1 = tslib_1.__importDefault(__webpack_require__(/*! @neos-project/positional-array-sorter */ "../../../../node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js"));
 var SynchronousRegistry = function (_super) {
     tslib_1.__extends(SynchronousRegistry, _super);
     function SynchronousRegistry(description) {
@@ -356,10 +356,10 @@ exports["default"] = SynchronousRegistry;
 
 /***/ }),
 
-/***/ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js ***!
-  \*********************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js ***!
+  \*************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -367,19 +367,39 @@ exports["default"] = SynchronousRegistry;
 
 
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var SynchronousRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js"));
+var tslib_1 = __webpack_require__(/*! tslib */ "../../../../node_modules/tslib/tslib.es6.js");
+var SynchronousRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousRegistry */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js"));
 exports.SynchronousRegistry = SynchronousRegistry_1["default"];
-var SynchronousMetaRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousMetaRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js"));
+var SynchronousMetaRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousMetaRegistry */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js"));
 exports.SynchronousMetaRegistry = SynchronousMetaRegistry_1["default"];
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js ***!
-  \******************************************************************************************/
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js ***!
+  \**********************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _readFromConsumerApi = __webpack_require__(/*! ../../../../dist/readFromConsumerApi */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js");
+
+var _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = (0, _readFromConsumerApi2.default)('vendor')().React;
+
+/***/ }),
+
+/***/ "../../../../node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js ***!
+  \**********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -387,7 +407,7 @@ exports.SynchronousMetaRegistry = SynchronousMetaRegistry_1["default"];
 
 
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var tslib_1 = __webpack_require__(/*! tslib */ "../../../../node_modules/tslib/tslib.es6.js");
 var positionalArraySorter = function positionalArraySorter(subject, position, idKey) {
     var e_1, _a, e_2, _b, e_3, _c, e_4, _d, e_5, _e, e_6, _f, e_7, _g;
     if (position === void 0) {
@@ -639,10 +659,10 @@ exports["default"] = positionalArraySorter;
 
 /***/ }),
 
-/***/ "./node_modules/tslib/tslib.es6.js":
-/*!*****************************************!*\
-  !*** ./node_modules/tslib/tslib.es6.js ***!
-  \*****************************************/
+/***/ "../../../../node_modules/tslib/tslib.es6.js":
+/*!*********************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/tslib/tslib.es6.js ***!
+  \*********************************************************************************************************************************/
 /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -893,6 +913,75 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 /***/ }),
 
+/***/ "../ResponsivePropertyEditor/lib/index.js":
+/*!************************************************!*\
+  !*** ../ResponsivePropertyEditor/lib/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __extends = undefined && undefined.__extends || function () {
+    var _extendStatics = function extendStatics(d, b) {
+        _extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
+            d.__proto__ = b;
+        } || function (d, b) {
+            for (var p in b) {
+                if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+            }
+        };
+        return _extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        _extendStatics(d, b);
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+}();
+var __createBinding = undefined && undefined.__createBinding || (Object.create ? function (o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function get() {
+            return m[k];
+        } });
+} : function (o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+});
+var __setModuleDefault = undefined && undefined.__setModuleDefault || (Object.create ? function (o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+} : function (o, v) {
+    o["default"] = v;
+});
+var __importStar = undefined && undefined.__importStar || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) {
+        if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    }__setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importStar(__webpack_require__(/*! react */ "../../../../node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js"));
+var ResponsivePropertyEditor = function (_super) {
+    __extends(ResponsivePropertyEditor, _super);
+    function ResponsivePropertyEditor() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ResponsivePropertyEditor.prototype.render = function () {
+        return react_1.default.createElement("div", null, "Test");
+    };
+    return ResponsivePropertyEditor;
+}(react_1.PureComponent);
+exports.default = ResponsivePropertyEditor;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -917,16 +1006,20 @@ __webpack_require__(/*! ./manifest */ "./src/manifest.js");
 "use strict";
 
 
-var _neosUiExtensibility = __webpack_require__(/*! @neos-project/neos-ui-extensibility */ "./node_modules/@neos-project/neos-ui-extensibility/dist/index.js");
+var _neosUiExtensibility = __webpack_require__(/*! @neos-project/neos-ui-extensibility */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/index.js");
 
 var _neosUiExtensibility2 = _interopRequireDefault(_neosUiExtensibility);
+
+var _neosResponsivePropertiesEditor = __webpack_require__(/*! @networkteam/neos-responsive-properties-editor */ "../ResponsivePropertyEditor/lib/index.js");
+
+var _neosResponsivePropertiesEditor2 = _interopRequireDefault(_neosResponsivePropertiesEditor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _neosUiExtensibility2.default)('Networkteam.Neos.ResponsiveProperties:ResponsivePropertyEditor', {}, function (globalRegistry) {
   var editorsRegistry = globalRegistry.get('inspector').get('editors');
   editorsRegistry.set('Networkteam.Neos.ResponsiveProperties/ResponsivePropertyEditor', {
-    component: React.createElement('div', null)
+    component: _neosResponsivePropertiesEditor2.default
   });
 });
 

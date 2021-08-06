@@ -1,0 +1,20 @@
+{
+  "author": "Sebastian Flor <sebastian.flor@networkteam.com>",
+  "name": "@networkteam/neos-responsive-properties-registry",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "neos-react-scripts build",
+    "watch": "neos-react-scripts watch"
+  },
+  "neos": {
+    "buildTargetDirectory": "../../../Public/ResponsivePropertyEditor"
+  },
+  "devDependencies": {
+    "@neos-project/neos-ui-extensibility": "^7.1.1"
+  },
+  "dependencies": {
+    "@networkteam/neos-responsive-properties-editor": "1.0.0"
+  },
+  "repository": "git@github.com:networkteam/Networkteam.Neos.ResponsiveProperties.git",
+  "license": "MIT"
+}
