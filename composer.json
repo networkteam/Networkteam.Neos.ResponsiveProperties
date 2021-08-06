@@ -2,11 +2,17 @@
   "name": "networkteam/neos-responsive-properties",
   "type": "neos-package",
   "require": {
-      "neos/neos-ui": "^5.2"
+    "neos/neos": "^5.1.0",
+    "neos/neos-ui": "^5.2"
   },
   "extra": {
-      "neos": {
-          "package-key": "Networkteam.Neos.ResponsiveProperties"
-      }
+    "neos": {
+      "package-key": "Networkteam.Neos.ResponsiveProperties"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Networkteam\\Neos\\ResponsiveProperties\\": "Classes/"
+    }
   }
 }

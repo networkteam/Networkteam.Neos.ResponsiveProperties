@@ -1,49 +1,39 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
     };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
-var ResponsivePropertyEditor = (function (_super) {
-    __extends(ResponsivePropertyEditor, _super);
-    function ResponsivePropertyEditor() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    ResponsivePropertyEditor.prototype.render = function () {
-        return react_1.default.createElement("div", null, "Test");
+var react_1 = __importDefault(require("react"));
+var SimpleSelectBoxEditor_1 = __importDefault(require("./SimpleSelectBoxEditor"));
+var react_ui_components_1 = require("@neos-project/react-ui-components");
+var Editor = function (props) {
+    var currentValues = props.value;
+    var handleValueChange = function (propertyName) {
+        return function (value) {
+            var _a;
+            var newProperties = __assign(__assign({}, currentValues), (_a = {}, _a[propertyName] = value, _a));
+            props.commit(newProperties);
+        };
     };
-    return ResponsivePropertyEditor;
-}(react_1.PureComponent));
-exports.default = ResponsivePropertyEditor;
+    return (react_1.default.createElement(react_1.default.Fragment, null, Object.keys(props.options.properties).map(function (propertyName) {
+        var _a = props.options.properties[propertyName], label = _a.label, icon = _a.icon;
+        return (react_1.default.createElement("div", { key: "select-box-" + propertyName },
+            react_1.default.createElement("div", { style: { display: "flex", alignItems: "center" } },
+                icon && react_1.default.createElement(react_ui_components_1.Icon, { icon: icon, style: { marginRight: 10 } }),
+                react_1.default.createElement(react_ui_components_1.Label, { style: { width: "100%" } }, label)),
+            react_1.default.createElement(SimpleSelectBoxEditor_1.default, { value: currentValues[propertyName], commit: handleValueChange(propertyName), options: props.options, i18nRegistry: props.i18nRegistry })));
+    })));
+};
+exports.default = Editor;
 //# sourceMappingURL=index.js.map

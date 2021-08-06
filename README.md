@@ -14,12 +14,55 @@ To use the inspector editor in your NodeType, define it in the chosen property:
 'Vendor.Site:MyContent':
   # ...
   properties:
-    link:
-      type: string
+    margin:
+      type: array
       ui:
         inspector:
           # ...
           editor: 'Networkteam.Neos.ResponsiveProperties/ResponsivePropertyEditor'
+```
+
+You can use the exact same editor options of a select box (except custom data sources atm.). In addition you can define properties with a label and icon, each of them will render its own select box. Make sure to set multiple to false for single selects. This is necessary because neos automatically sets multiple to true if the property type is `array`:
+
+```yaml
+'Vendor.Site:MyContent':
+  # ...
+  properties:
+    margin:
+      type: array
+      ui:
+        inspector:
+          # ...
+          editorOptions:
+            allowEmpty: true
+            multiple: false
+            properties:
+              desktop:
+                label: 'Desktop'
+                icon: icon-desktop
+              tablet:
+                label: 'Tablet'
+              mobile:
+                label: 'Mobile'
+            values:
+              margin-small:
+                label: i18n
+              margin-top-small:
+                label: i18n
+              margin-bottom-small:
+                label: i18n
+              margin:
+                label: i18n
+              margin-top:
+                label: i18n
+              margin-bottom:
+                label: i18n
+              margin-large:
+                label: i18n
+              margin-top-large:
+                label: i18n
+              margin-bottom-large:
+                label: i18n
 ```
 
 ## Development
@@ -51,3 +94,9 @@ The artifacts are part of the repository and should always be committed. To buil
 ```bash
 yarn build
 ```
+
+### TODO
+
+* make it work with custom data source
+* add translation for property labels
+* add styling

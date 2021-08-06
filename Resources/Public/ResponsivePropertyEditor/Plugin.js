@@ -376,6 +376,26 @@ exports.SynchronousMetaRegistry = SynchronousMetaRegistry_1["default"];
 
 /***/ }),
 
+/***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/src/shims/neosProjectPackages/react-ui-components/index.js":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/src/shims/neosProjectPackages/react-ui-components/index.js ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _readFromConsumerApi = __webpack_require__(/*! ../../../../dist/readFromConsumerApi */ "../../../../node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js");
+
+var _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = (0, _readFromConsumerApi2.default)('NeosProjectPackages')().ReactUiComponents;
+
+/***/ }),
+
 /***/ "../../../../node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** /Users/flor/src/neos-base-site/DistributionPackages/Networkteam.Neos.ResponsiveProperties/node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js ***!
@@ -913,36 +933,103 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 /***/ }),
 
-/***/ "../ResponsivePropertyEditor/lib/index.js":
-/*!************************************************!*\
-  !*** ../ResponsivePropertyEditor/lib/index.js ***!
-  \************************************************/
+/***/ "../ResponsivePropertyEditor/lib/SelectBoxHelpers.js":
+/*!***********************************************************!*\
+  !*** ../ResponsivePropertyEditor/lib/SelectBoxHelpers.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var __extends = undefined && undefined.__extends || function () {
-    var _extendStatics = function extendStatics(d, b) {
-        _extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
-            d.__proto__ = b;
-        } || function (d, b) {
-            for (var p in b) {
-                if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+var __assign = undefined && undefined.__assign || function () {
+    __assign = Object.assign || function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) {
+                if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
             }
-        };
-        return _extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        _extendStatics(d, b);
-        function __() {
-            this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        return t;
     };
-}();
+    return __assign.apply(this, arguments);
+};
+var __read = undefined && undefined.__read || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o),
+        r,
+        ar = [],
+        e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+            ar.push(r.value);
+        }
+    } catch (error) {
+        e = { error: error };
+    } finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+            if (e) throw e.error;
+        }
+    }
+    return ar;
+};
+var __spreadArray = undefined && undefined.__spreadArray || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++) {
+        to[j] = from[i];
+    }return to;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.processSelectBoxOptions = exports.searchOptions = exports.shouldDisplaySearchBox = void 0;
+var shouldDisplaySearchBox = function shouldDisplaySearchBox(options, processedSelectBoxOptions) {
+    return typeof options.minimumResultsForSearch !== "undefined" && options.minimumResultsForSearch >= 0 && processedSelectBoxOptions.length >= options.minimumResultsForSearch;
+};
+exports.shouldDisplaySearchBox = shouldDisplaySearchBox;
+var searchOptions = function searchOptions(searchTerm, processedSelectBoxOptions) {
+    return processedSelectBoxOptions.filter(function (option) {
+        return option.label && option.label.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+    });
+};
+exports.searchOptions = searchOptions;
+var processSelectBoxOptions = function processSelectBoxOptions(i18nRegistry, selectBoxOptions) {
+    return Object.keys(selectBoxOptions).reduce(function (options, currentOptionKey) {
+        var currentOption = selectBoxOptions[currentOptionKey];
+        if (!currentOption || !currentOption.label) {
+            return options;
+        }
+        return __spreadArray(__spreadArray([], __read(options)), [__assign(__assign({ value: currentOptionKey }, currentOption), { label: i18nRegistry.translate(currentOption.label) })]);
+    }, []);
+};
+exports.processSelectBoxOptions = processSelectBoxOptions;
+//# sourceMappingURL=SelectBoxHelpers.js.map
+
+/***/ }),
+
+/***/ "../ResponsivePropertyEditor/lib/SimpleSelectBoxEditor.js":
+/*!****************************************************************!*\
+  !*** ../ResponsivePropertyEditor/lib/SimpleSelectBoxEditor.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __assign = undefined && undefined.__assign || function () {
+    __assign = Object.assign || function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) {
+                if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            }
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = undefined && undefined.__createBinding || (Object.create ? function (o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function get() {
@@ -965,19 +1052,102 @@ var __importStar = undefined && undefined.__importStar || function (mod) {
     }__setModuleDefault(result, mod);
     return result;
 };
+var __read = undefined && undefined.__read || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o),
+        r,
+        ar = [],
+        e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+            ar.push(r.value);
+        }
+    } catch (error) {
+        e = { error: error };
+    } finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+            if (e) throw e.error;
+        }
+    }
+    return ar;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../../../../node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js"));
-var ResponsivePropertyEditor = function (_super) {
-    __extends(ResponsivePropertyEditor, _super);
-    function ResponsivePropertyEditor() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var react_ui_components_1 = __webpack_require__(/*! @neos-project/react-ui-components */ "../../../../node_modules/@neos-project/neos-ui-extensibility/src/shims/neosProjectPackages/react-ui-components/index.js");
+var SelectBoxHelpers_1 = __webpack_require__(/*! ./SelectBoxHelpers */ "../ResponsivePropertyEditor/lib/SelectBoxHelpers.js");
+var SimpleSelectBox = function SimpleSelectBox(_a) {
+    var commit = _a.commit,
+        value = _a.value,
+        className = _a.className,
+        options = _a.options,
+        i18nRegistry = _a.i18nRegistry;
+    var _b = __read(react_1.useState(""), 2),
+        searchTerm = _b[0],
+        setSearchTerm = _b[1];
+    var defaultOptions = { minimumResultsForSearch: 5, threshold: 0, disabled: false };
+    var mergedOptions = __assign(__assign({}, defaultOptions), options);
+    var processedSelectBoxOptions = SelectBoxHelpers_1.processSelectBoxOptions(i18nRegistry, mergedOptions.values);
+    var allowEmpty = options.allowEmpty || Object.prototype.hasOwnProperty.call(options.values, "");
+    var placeholder = options && options.placeholder && i18nRegistry.translate(unescape(options.placeholder)) || i18nRegistry.translate("Neos.Neos:Main:choose");
+    if (options.multiple) {
+        return react_1.default.createElement(react_ui_components_1.MultiSelectBox, { className: className, options: processedSelectBoxOptions, values: value || [], onValuesChange: commit, placeholder: placeholder, allowEmpty: allowEmpty, displaySearchBox: SelectBoxHelpers_1.shouldDisplaySearchBox(mergedOptions, processedSelectBoxOptions), searchOptions: SelectBoxHelpers_1.searchOptions(searchTerm, processedSelectBoxOptions), onSearchTermChange: setSearchTerm, noMatchesFoundLabel: i18nRegistry.translate("Neos.Neos:Main:noMatchesFound"), searchBoxLeftToTypeLabel: i18nRegistry.translate("Neos.Neos:Main:searchBoxLeftToType"), threshold: mergedOptions.threshold, disabled: mergedOptions.disabled });
     }
-    ResponsivePropertyEditor.prototype.render = function () {
-        return react_1.default.createElement("div", null, "Test");
+    return react_1.default.createElement(react_ui_components_1.SelectBox, { options: searchTerm ? SelectBoxHelpers_1.searchOptions(searchTerm, processedSelectBoxOptions) : processedSelectBoxOptions, value: value, className: className, onValueChange: commit, placeholder: placeholder, allowEmpty: allowEmpty, displaySearchBox: SelectBoxHelpers_1.shouldDisplaySearchBox(mergedOptions, processedSelectBoxOptions), onSearchTermChange: setSearchTerm, noMatchesFoundLabel: i18nRegistry.translate("Neos.Neos:Main:noMatchesFound"), searchBoxLeftToTypeLabel: i18nRegistry.translate("Neos.Neos:Main:searchBoxLeftToType"), threshold: mergedOptions.threshold, disabled: mergedOptions.disabled });
+};
+exports.default = SimpleSelectBox;
+//# sourceMappingURL=SimpleSelectBoxEditor.js.map
+
+/***/ }),
+
+/***/ "../ResponsivePropertyEditor/lib/index.js":
+/*!************************************************!*\
+  !*** ../ResponsivePropertyEditor/lib/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __assign = undefined && undefined.__assign || function () {
+    __assign = Object.assign || function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) {
+                if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            }
+        }
+        return t;
     };
-    return ResponsivePropertyEditor;
-}(react_1.PureComponent);
-exports.default = ResponsivePropertyEditor;
+    return __assign.apply(this, arguments);
+};
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../../../../node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js"));
+var SimpleSelectBoxEditor_1 = __importDefault(__webpack_require__(/*! ./SimpleSelectBoxEditor */ "../ResponsivePropertyEditor/lib/SimpleSelectBoxEditor.js"));
+var react_ui_components_1 = __webpack_require__(/*! @neos-project/react-ui-components */ "../../../../node_modules/@neos-project/neos-ui-extensibility/src/shims/neosProjectPackages/react-ui-components/index.js");
+var Editor = function Editor(props) {
+    var currentValues = props.value;
+    var handleValueChange = function handleValueChange(propertyName) {
+        return function (value) {
+            var _a;
+            var newProperties = __assign(__assign({}, currentValues), (_a = {}, _a[propertyName] = value, _a));
+            props.commit(newProperties);
+        };
+    };
+    return react_1.default.createElement(react_1.default.Fragment, null, Object.keys(props.options.properties).map(function (propertyName) {
+        var _a = props.options.properties[propertyName],
+            label = _a.label,
+            icon = _a.icon;
+        return react_1.default.createElement("div", { key: "select-box-" + propertyName }, react_1.default.createElement("div", { style: { display: "flex", alignItems: "center" } }, icon && react_1.default.createElement(react_ui_components_1.Icon, { icon: icon, style: { marginRight: 10 } }), react_1.default.createElement(react_ui_components_1.Label, { style: { width: "100%" } }, label)), react_1.default.createElement(SimpleSelectBoxEditor_1.default, { value: currentValues[propertyName], commit: handleValueChange(propertyName), options: props.options, i18nRegistry: props.i18nRegistry }));
+    }));
+};
+exports.default = Editor;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
