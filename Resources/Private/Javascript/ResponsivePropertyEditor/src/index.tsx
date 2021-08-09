@@ -26,7 +26,7 @@ interface IEditorProps {
 }
 
 const Editor: FC<IEditorProps> = (props) => {
-  const { value: currentValues } = props;
+  const { value: currentValues, i18nRegistry: i18n } = props;
 
   const handleValueChange =
     (propertyName: string) =>
@@ -38,23 +38,25 @@ const Editor: FC<IEditorProps> = (props) => {
 
       props.commit(newProperties);
     };
-
   return (
     <>
       {Object.keys(props.options.properties).map((propertyName) => {
-        // TODO: Label needs translation
-        const { label, icon } = props.options.properties[propertyName];
+        const { label, icon, values } = props.options.properties[propertyName];
+        const selectOptions: IOptions = {
+          ...props.options,
+          values: values && Object.keys(values).length ? values : props.options.values,
+        };
         return (
           <div key={"select-box-" + propertyName}>
             <div style={{ display: "flex", alignItems: "center" }}>
               {icon && <Icon icon={icon} style={{ marginRight: 10 }} />}
-              <Label style={{ width: "100%" }}>{label}</Label>
+              <Label style={{ width: "100%" }}>{i18n.translate(label)}</Label>
             </div>
             <SimpleSelectBoxEditor
               value={currentValues[propertyName]}
               commit={handleValueChange(propertyName)}
-              options={props.options}
-              i18nRegistry={props.i18nRegistry}
+              options={selectOptions}
+              i18nRegistry={i18n}
             />
           </div>
         );

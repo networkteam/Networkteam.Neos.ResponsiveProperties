@@ -3,9 +3,13 @@ export interface IValue {
     icon: string;
     group: string;
 }
+export interface IValues {
+    [key: string]: IValue;
+}
 export interface IProperty {
     label: string;
     icon: string;
+    values: IValues;
 }
 export interface IOptions {
     allowEmpty?: boolean;
@@ -17,9 +21,7 @@ export interface IOptions {
     properties: {
         [key: string]: IProperty;
     };
-    values: {
-        [key: string]: IValue;
-    };
+    values: IValues;
 }
 export interface ISelectBoxOption extends IValue {
     value: string;

@@ -22,6 +22,41 @@ To use the inspector editor in your NodeType, define it in the chosen property:
           editor: 'Networkteam.Neos.ResponsiveProperties/ResponsivePropertyEditor'
 ```
 
+### Basic Select Boxes
+
+You can use the exact same editor options of a select box (except custom data sources atm.). In addition you can define properties with a label and icon, each of them will render its own select box. Make sure to set multiple to false for single selects. This is necessary because neos automatically sets multiple to true if the property type is `array`:
+
+```yaml
+'Vendor.Site:MyContent':
+  # ...
+  properties:
+    margin:
+      type: array
+      ui:
+        inspector:
+          # ...
+          editorOptions:
+            allowEmpty: true
+            multiple: false
+            properties:
+              desktop:
+                label: i18n
+                icon: icon-desktop
+              tablet:
+                label: 'Tablet'
+              mobile:
+                label: 'Mobile'
+            values:
+              exmaple-value:
+                label: i18n
+              another-example:
+                label: i18n
+```
+
+### Overwriting Values
+
+To overwrite the select box options in only one case, the values can be set as part of the property itself
+
 You can use the exact same editor options of a select box (except custom data sources atm.). In addition you can define properties with a label and icon, each of them will render its own select box. Make sure to set multiple to false for single selects. This is necessary because neos automatically sets multiple to true if the property type is `array`:
 
 ```yaml
@@ -40,29 +75,34 @@ You can use the exact same editor options of a select box (except custom data so
               desktop:
                 label: 'Desktop'
                 icon: icon-desktop
-              tablet:
-                label: 'Tablet'
-              mobile:
-                label: 'Mobile'
-            values:
-              margin-small:
-                label: i18n
-              margin-top-small:
-                label: i18n
-              margin-bottom-small:
-                label: i18n
-              margin:
-                label: i18n
-              margin-top:
-                label: i18n
-              margin-bottom:
-                label: i18n
-              margin-large:
-                label: i18n
-              margin-top-large:
-                label: i18n
-              margin-bottom-large:
-                label: i18n
+                values:
+                  special-value:
+                    label: i18n
+                  another-special-value:
+                    label: i18n
+              # ...
+```
+
+## I18n
+
+For translations of the dropdown items, you can use the same keys as for a simple select box:
+
+```xml
+  <trans-unit id="properties.margin.selectBoxEditor.values.example-value" xml:space="preserve">
+      <source>Example label</source>
+  </trans-unit>
+```
+
+Translating the property labels and values follows the known path-scheme
+
+```xml
+  <trans-unit id="properties.margin.property.desktop.label" xml:space="preserve">
+    <source>Example label</source>
+  </trans-unit>
+
+  <trans-unit id="properties.margin.property.desktop.selectBoxEditor.values.special-margin" xml:space="preserve">
+    <source>Example overwritten value label</source>
+  </trans-unit>
 ```
 
 ## Development
@@ -98,5 +138,4 @@ yarn build
 ### TODO
 
 * make it work with custom data source
-* add translation for property labels
 * add styling

@@ -12,6 +12,10 @@ use Neos\Flow\AOP\JoinPointInterface;
  */
 class NodeTypeConfigurationEnrichmentAspect
 {
+    const SELECT_BOX_PREFIX = 'selectBoxEditor.';
+    const VALUES_PREFIX = 'values.';
+    const PROPERTIES_PREFIX = 'property.';
+    const LABEL_SUFFIX = '.label';
 
     /**
      * @Flow\Around("method(Neos\ContentRepository\Domain\Model\NodeType->__construct())")
@@ -62,16 +66,52 @@ class NodeTypeConfigurationEnrichmentAspect
                 $editorOptions['placeholder'] = $translationIdGenerator('selectBoxEditor.placeholder');
             }
 
-            if (!isset($editorOptions['values']) || !is_array($editorOptions['values'])) {
-                return;
+            if (isset($editorOptions['values']) && is_array($editorOptions['values'])) {
+                $this->translateValues($editorOptions['values'], $translationIdGenerator);
             }
-            foreach ($editorOptions['values'] as $value => &$optionConfiguration) {
-                if ($optionConfiguration === null) {
-                    continue;
+
+
+            if (isset($editorOptions['properties']) && is_array($editorOptions['values'])) {
+                $this->translateProperties($editorOptions['properties'], $translationIdGenerator);
+            }
+        }
+    }
+
+    /**
+     * @param array $propertiesArray
+     * @param callable $translationIdGenerator
+     * @return void
+     */
+    protected function translateProperties(array &$propertiesArray, $translationIdGenerator)
+    {
+        foreach ($propertiesArray as $value => &$optionConfiguration) {
+            if ($optionConfiguration === null) {
+                continue;
+            }
+            if ($this->shouldFetchTranslation($optionConfiguration)) {
+                $optionConfiguration['label'] = $translationIdGenerator($this::PROPERTIES_PREFIX . $value . $this::LABEL_SUFFIX);
+
+                if (isset($optionConfiguration['values']) && is_array($optionConfiguration['values'])) {
+                    $this->translateValues($optionConfiguration['values'], $translationIdGenerator, $this::PROPERTIES_PREFIX . $value . '.');
                 }
-                if ($this->shouldFetchTranslation($optionConfiguration)) {
-                    $optionConfiguration['label'] = $translationIdGenerator('selectBoxEditor.values.' . $value);
-                }
+            }
+        }
+    }
+
+    /**
+     * @param array $valuesArray
+     * @param callable $translationIdGenerator
+     * @param string $translationIdPrefix
+     * @return void
+     */
+    protected function translateValues(array &$valuesArray, $translationIdGenerator, string $translationIdPrefix = '')
+    {
+        foreach ($valuesArray as $value => &$optionConfiguration) {
+            if ($optionConfiguration === null) {
+                continue;
+            }
+            if ($this->shouldFetchTranslation($optionConfiguration)) {
+                $optionConfiguration['label'] = $translationIdGenerator($translationIdPrefix . $this::SELECT_BOX_PREFIX  . $this::VALUES_PREFIX  . $value);
             }
         }
     }
